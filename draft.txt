@@ -1,0 +1,22 @@
+LOAD CSV WITH HEADERS FROM "file:///WS-Project-Follows.csv" AS row
+match (s:SocialMedia {UserId:row.IdPerson, Name:row.SocialMedia})
+match (m:SocialMedia {UserId:row.IdFollow, Name:row.SocialMedia})
+
+if exist Follow 
+    //update
+    if instagram
+        set personal
+    if linkedin
+        ...
+    if pinterest
+        ...
+else
+    //create
+    if instagram
+        ...
+    if linkedin
+        ...
+    if pinterest
+        ...
+
+merge (s)-[:Follow]-(m)
