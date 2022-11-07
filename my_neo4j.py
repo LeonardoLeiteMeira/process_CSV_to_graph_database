@@ -24,7 +24,7 @@ class MetaSocialMediaGraph:
         self.neo4j = Neo4jConnection()
 
     def _exist_follow_relationship(self, user_id_1:int, user_id_2:str ,social_media_name:str)->bool:
-        cypher = f"match (s {{UserId:{user_id_1},Name:\"{social_media_name}\"}})-[f: FOLLOW]-(m {{UserId:{user_id_2},Name:\"{social_media_name}\"}}) return f"
+        cypher = f"match (s {{UserId:{user_id_1},Name:\"{social_media_name}\"}})-[f]-(m {{UserId:{user_id_2},Name:\"{social_media_name}\"}}) return f"
 
         result = self.neo4j.run_cypher(cypher)
         result_dict = result.data()
@@ -42,12 +42,12 @@ class MetaSocialMediaGraph:
 
         if is_mutual:
             social_media.mutual_follow()
-            delete_old_relationship = f"match (s {{UserId:{user_id_1},Name:\"{social_media_name}\"}})-[f: FOLLOW]-(m {{UserId:{user_id_2},Name:\"{social_media_name}\"}}) delete f"
+            delete_old_relationship = f"match (s {{UserId:{user_id_1},Name:\"{social_media_name}\"}})-[f]-(m {{UserId:{user_id_2},Name:\"{social_media_name}\"}}) delete f"
             cypher_list.append(delete_old_relationship)
         else:
             social_media.follow()
 
-        cypher = f"match (s {{UserId:{user_id_1},Name:\"{social_media_name}\"}}) match (m {{UserId:{user_id_2},Name:\"{social_media_name}\"}}) merge (s)-[:FOLLOW{{Type:\"{str(social_media.type)}\"}}]-(m)"
+        cypher = f"match (s {{UserId:{user_id_1},Name:\"{social_media_name}\"}}) match (m {{UserId:{user_id_2},Name:\"{social_media_name}\"}}) merge (s)-[:{social_media.type}]-(m)"
         cypher_list.append(cypher)
         self.neo4j.run_cypher_transaction(cypher_list)
 

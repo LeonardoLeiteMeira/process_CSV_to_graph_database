@@ -2,11 +2,11 @@ from enum import Enum
 
 
 class RelationshipType(Enum):
-    PERSONAL = "Personal"
-    INFLUENCE = "Influence"
-    PROFESSIONAL_RELATIONSHIP = "Professional_Relationship"
-    CONTENTS = "Contents"
-    UNDEFINED = "Undefined"
+    PERSONAL = "PPERSONAL"
+    INFLUENCE = "INFLUENCE"
+    PROFESSIONAL_RELATIONSHIP = "PROFESSIONAL_RELATIONSHIP"
+    CONTENTS = "CONTENTS"
+    UNDEFINED = "UNDEFINED"
 
  
 class Person:
@@ -50,104 +50,104 @@ class SocialMedia:
 class Instagram(SocialMedia):
     def __init__(self):
         self.name = "Instagram"
-        self.type = RelationshipType.UNDEFINED
+        self.type = RelationshipType.UNDEFINED.value
 
     def follow(self):
-        self.type = RelationshipType.INFLUENCE
+        self.type = RelationshipType.INFLUENCE.value
         print("just follow INSTAGRAM")
-        return self
+        return self.type
 
     def mutual_follow(self):
-        self.type = RelationshipType.PERSONAL
+        self.type = RelationshipType.PERSONAL.value
         print("Mutal connection INSTAGRAM")
-        return self
+        return self.type
 
 class LinkedIn(SocialMedia):
     def __init__(self):
         self.name = "Linkedin"
-        self.type = RelationshipType.UNDEFINED
+        self.type = RelationshipType.UNDEFINED.value
 
     def follow(self):
-        self.type = RelationshipType.INFLUENCE
+        self.type = RelationshipType.INFLUENCE.value
         print("just follow LINKEDIN")
-        return self
+        return self.type
 
     def mutual_follow(self):
-        self.type = RelationshipType.PROFESSIONAL_RELATIONSHIP
+        self.type = RelationshipType.PROFESSIONAL_RELATIONSHIP.value
         print("Mutal connection LINKEDIN")
-        return self
+        return self.type
 
 class Facebook(SocialMedia):
     def __init__(self):
         self.name = "Facebook"
-        self.type = RelationshipType.UNDEFINED
+        self.type = RelationshipType.UNDEFINED.value
 
     def follow(self):
-        self.type = RelationshipType.CONTENTS
+        self.type = RelationshipType.CONTENTS.value
         print("just follow FACEBOOK")
-        return self
+        return self.type
 
     def mutual_follow(self):
-        self.type = RelationshipType.PERSONAL
+        self.type = RelationshipType.PERSONAL.value
         print("Mutal connection FACEBOOK")
-        return self
+        return self.type
 
 class Twitter(SocialMedia):
     def __init__(self):
         self.name = "Twitter"
-        self.type = RelationshipType.UNDEFINED
+        self.type = RelationshipType.UNDEFINED.value
 
     def follow(self):
-        self.type = RelationshipType.INFLUENCE
+        self.type = RelationshipType.INFLUENCE.value
         print("just follow Twitter")
-        return self
+        return self.type
 
     def mutual_follow(self):
-        self.type = RelationshipType.PERSONAL
+        self.type = RelationshipType.PERSONAL.value
         print("Mutal connection Twitter")
-        return self
+        return self.type
 
 class TikTok(SocialMedia):
     def __init__(self):
         self.name = "TikTok"
-        self.type = RelationshipType.UNDEFINED
+        self.type = RelationshipType.UNDEFINED.value
 
     def follow(self):
-        self.type = RelationshipType.CONTENTS
+        self.type = RelationshipType.CONTENTS.value
         print("just follow TikTok")
-        return self
+        return self.type
 
     def mutual_follow(self):
-        self.type = RelationshipType.CONTENTS
+        self.type = RelationshipType.CONTENTS.value
         print("Mutal connection TikTok")
-        return self
+        return self.type
 
 class Pinterest(SocialMedia):
     def __init__(self):
         self.name = "Pinterest"
-        self.type = RelationshipType.UNDEFINED
+        self.type = RelationshipType.UNDEFINED.value
 
     def follow(self):
-        self.type = RelationshipType.CONTENTS
+        self.type = RelationshipType.CONTENTS.value
         print("just follow Pinterest")
-        return self
+        return self.type
 
     def mutual_follow(self):
-        self.type = RelationshipType.CONTENTS
+        self.type = RelationshipType.CONTENTS.value
         print("Mutal connection Pinterest")
-        return self
+        return self.type
 
 class Youtube(SocialMedia):
     def __init__(self):
         self.name = "Youtube"
-        self.type = RelationshipType.UNDEFINED
+        self.type = RelationshipType.UNDEFINED.value
 
     def follow(self):
-        self.type = RelationshipType.CONTENTS
+        self.type = RelationshipType.CONTENTS.value
         print("just follow Youtube")
-        return self
+        return self.type
 
     def mutual_follow(self):
-        self.type = RelationshipType.CONTENTS
+        self.type = RelationshipType.CONTENTS.value
         print("Mutal connection Youtube")
-        return self
+        return self.type
