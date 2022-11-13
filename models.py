@@ -83,7 +83,7 @@ class Facebook(SocialMedia):
         self.type = RelationshipType.UNDEFINED.value
 
     def follow(self):
-        self.type = RelationshipType.CONTENTS.value
+        self.type = RelationshipType.INFLUENCE.value
         print("just follow FACEBOOK")
         return self.type
 
@@ -113,7 +113,7 @@ class TikTok(SocialMedia):
         self.type = RelationshipType.UNDEFINED.value
 
     def follow(self):
-        self.type = RelationshipType.CONTENTS.value
+        self.type = RelationshipType.INFLUENCE.value
         print("just follow TikTok")
         return self.type
 
@@ -128,7 +128,7 @@ class Pinterest(SocialMedia):
         self.type = RelationshipType.UNDEFINED.value
 
     def follow(self):
-        self.type = RelationshipType.CONTENTS.value
+        self.type = RelationshipType.INFLUENCE.value
         print("just follow Pinterest")
         return self.type
 
@@ -143,7 +143,7 @@ class Youtube(SocialMedia):
         self.type = RelationshipType.UNDEFINED.value
 
     def follow(self):
-        self.type = RelationshipType.CONTENTS.value
+        self.type = RelationshipType.INFLUENCE.value
         print("just follow Youtube")
         return self.type
 
