@@ -1,0 +1,22 @@
+\chapter{Tools}
+
+\section{Neo4J}
+
+In order to achieve the objectives of the work, the tool chosen to provide the database is Neo4J \cite{neo4j}, which provides graph database management and is recommended for use with large volumes of data that maintain a navigational relationship between them. This database model is classified as a non-relational database, but based on graphs, that is, the database is designed on the concept of nodes and edges.
+
+This tool allows mapping different users of different social media and their connection, in order to make extrapolations on the recommendation format. A database in the Neo4J system is composed of four main types of components, when through them it is possible to map and extract information from our databases, these components are:
+\begin{itemize}
+  \item Nodes: Equivalent to the vertex of the graph, being the main data within the database. They can contain information such as labels and properties.
+  \item Relationship: Relationships are equivalent to the edges of a graph and describe the relationship between nodes. They can also contain properties.
+  \item Labels: Labels are classifications or types of nodes, being used to categorize and classify the node into a certain type.
+  \item Properties: Attributes of nodes or relationships, they are composed of key and value.
+\end{itemize}
+ 
+For graph database manipulation, Cypher \cite{cypher} is used, which is a graph manipulation language in Neo4J. Through this language we can manipulate our database in Neo4J, where we can search, insert, update and perform other functions.
+
+\section{Python}
+Python \cite{python} is a general purpose programming language that in the scope of work was used to automate processes and manipulate Neo4J, abstracting the necessary steps and also applying the necessary validations and transformations before performing the insertions.This language is also used to provide the information stored in the database through an API (Application Programming Interface), 
+which makes it possible to create a graphical interface for user interactions.
+
+\section{React}
+React is a library for the JavaScript language, used to build graphical interfaces for web platforms. In the scope of this work we will use it to create the graphical interface, which accesses the API to display the information in the web system. The web interface prototype can be accessed through this \href{https://www.figma.com/file/NHTBlNSzzWVDL6fHFgLb0Q/Meta-Social-Media?node-id=0%3A1}{link}.
